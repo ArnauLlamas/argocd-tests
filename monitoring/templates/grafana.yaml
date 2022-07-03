@@ -14,6 +14,9 @@ spec:
     chart: grafana
     helm:
       values: |
+        service:
+          type: "NodePort"
+          nodePort: 32180
         datasources:
           datasources.yaml:
             apiVersion: 1
