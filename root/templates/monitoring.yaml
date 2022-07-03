@@ -8,7 +8,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
-  project: monitoring
+  project: default
   source:
     path: monitoring/
     repoURL: https://github.com/arnydnd/argocd-tests.git
