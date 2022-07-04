@@ -22,9 +22,9 @@ spec:
           metrics:
             enabled: true
           publishService:
-            enabled: true
+            enabled: false
           service:
-            enabled: true
+            enabled: false
           resources:
             limits:
               cpu: 100m
