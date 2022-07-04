@@ -15,16 +15,16 @@ spec:
     helm:
       values: |
         controller:
-          ingressClass: "public"
+          ingressClass: nginx-public
           hostPort:
             enabled: true
           kind: DaemonSet
           metrics:
-            enabled: false
+            enabled: true
           publishService:
-            enabled: false
+            enabled: true
           service:
-            enabled: false
+            enabled: true
           resources:
             limits:
               cpu: 100m
