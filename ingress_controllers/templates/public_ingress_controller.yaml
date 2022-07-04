@@ -33,7 +33,7 @@ spec:
               cpu: 100m
               memory: 90Mi
     repoURL: https://kubernetes.github.io/ingress-nginx
-    targetRevision: 3.41.0
+    targetRevision: 4.1.4
   syncPolicy:
     automated:
       prune: true
