@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: IngressClass
 metadata:
-  name: traefik-public
+  name: traefik-private
   namespace: ingress-controllers
 spec:
   controller: traefik.io/ingress-controller
@@ -10,28 +10,28 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: traefik-public
+  name: traefik-private
   labels:
-    app: traefik-public
+    app: traefik-private
   namespace: ingress-controllers
 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: traefik-public
+      app: traefik-private
   template:
     metadata:
       labels:
-        app: traefik-public
+        app: traefik-private
     spec:
       serviceAccountName: traefik-ingress-controller
       containers:
-        - name: traefik-public
+        - name: traefik-private
           image: traefik:v2.8
           args:
             - --providers.kubernetesingress
-            - --providers.kubernetesingress.ingressclass=traefik-public
+            - --providers.kubernetesingress.ingressclass="traefik-private"
           ports:
             - name: web
               containerPort: 80
@@ -40,15 +40,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: traefik-public
+  name: traefik-private
   namespace: ingress-controllers
 spec:
   type: NodePort
   selector:
-    app: traefik-public
+    app: traefik-private
   ports:
     - protocol: TCP
       port: 80
       name: web
       targetPort: 80
-      nodePort: 32000
+      nodePort: 32100

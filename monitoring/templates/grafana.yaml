@@ -15,8 +15,7 @@ spec:
     helm:
       values: |
         service:
-          type: "NodePort"
-          nodePort: 32180
+          type: "ClusterIP"
         datasources:
           datasources.yaml:
             apiVersion: 1
