@@ -19,7 +19,7 @@ spec:
           annotations:
             kubernetes.io/ingress.class: traefik-public
           hosts:
-            - grafan.testing.atikarooms.com
+            - grafana.testing.atikarooms.com
           path: /
         service:
           type: "ClusterIP"
