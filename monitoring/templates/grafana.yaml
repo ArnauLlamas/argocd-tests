@@ -14,6 +14,13 @@ spec:
     chart: grafana
     helm:
       values: |
+        ingress:
+          enabled: true
+          annotations:
+            kubernetes.io/ingress.class: traefik-public
+          hosts:
+            - grafan.testing.atikarooms.com
+          path: /
         service:
           type: "ClusterIP"
         datasources:
