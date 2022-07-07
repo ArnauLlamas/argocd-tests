@@ -18,7 +18,7 @@ spec:
           enabled: false
         server:
           extraArgs:
-            storage.local.retention: 168h
+            storage.tsdb.retention: 7d
     repoURL: https://prometheus-community.github.io/helm-charts
     targetRevision: 15.10.2
   syncPolicy:
