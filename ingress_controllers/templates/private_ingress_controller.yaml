@@ -32,7 +32,7 @@ spec:
           args:
             - --providers.kubernetesingress
             - --providers.kubernetesingress.ingressclass="traefik-private"
-            - --providers.kubernetesingress.ingressendpoint.ingressendpoint.hostname=testing.atikarooms.com
+            - --providers.kubernetesingress.ingressendpoint.hostname=testing.atikarooms.com
           ports:
             - name: web
               containerPort: 80
