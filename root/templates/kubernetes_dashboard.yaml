@@ -38,6 +38,5 @@ spec:
           service:
             name: kubernetes-dashboard
             port:
-              name: https
               number: 443
     host: dashboard.testing.atikarooms.com
