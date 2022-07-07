@@ -26,6 +26,7 @@ metadata:
   namespace: kubernetes-dashboard
   annotations:
     kubernetes.io/ingress.class: "traefik-public"
+    traefik.ingress.kubernetes.io/ssl-redirect: "true"
 
 spec:
   rules:
@@ -37,5 +38,6 @@ spec:
           service:
             name: kubernetes-dashboard
             port:
-              name: http
+              name: https
+              port: 443
     host: dashboard.testing.atikarooms.com
