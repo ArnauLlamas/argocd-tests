@@ -33,6 +33,8 @@ spec:
             - --providers.kubernetesingress
             - --providers.kubernetesingress.ingressclass=traefik-public
             - --providers.kubernetesingress.ingressendpoint.hostname=testing.atikarooms.com
+            - --log.level=INFO
+            - --log.format=json
           ports:
             - name: web
               containerPort: 80
