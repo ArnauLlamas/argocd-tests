@@ -35,6 +35,8 @@ spec:
             - --providers.kubernetesingress.ingressendpoint.hostname=testing.atikarooms.com
             - --log.level=INFO
             - --log.format=json
+            - --accesslog=true
+            - --accesslog.format=json
           ports:
             - name: web
               containerPort: 80
